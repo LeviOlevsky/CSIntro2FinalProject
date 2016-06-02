@@ -34,3 +34,5 @@ def innerTable(dict):
 def p(content):
     return '<p>' + str(content) + '</p>'
 
+def heading(num, content):
+    return '<h' + num + '>' + content + '</h' + num + '>'
