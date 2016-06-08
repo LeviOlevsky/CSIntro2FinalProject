@@ -8,7 +8,7 @@ print 'content-type: text/html\n'
 qs = cgi.FieldStorage()
 
 curr = csvToDict.userToDict('accounts.csv')
-print curr
+
 if 'reguser' in qs:
     reguser = qs['reguser'].value
     regpw = qs['regpw'].value
