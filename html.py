@@ -35,7 +35,7 @@ def p(content):
     return '<p>' + str(content) + '</p>'
 
 def heading(num, content):
-    return '<h' + num + '>' + content + '</h' + num + '>'
+    return '<h' + str(num) + '>' + content + '</h' + str(num) + '>'
 
 def a(link, content):
     return '<a href="' + link + '">' + content + '</a>'
