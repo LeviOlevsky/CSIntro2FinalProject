@@ -44,6 +44,8 @@ print '<ol><form>'
 for i in range(len(cards)):
     print '<li>' + randTerms[i]
     choices = fourChoices(defins)
+    if cards[randTerms[i]] not in choices:
+        choices[random.randint(0,3)] = cards[randTerms[i]]
     for j in range(4):
         print '<input type="radio" name="quiz' + str(i) + '" value="' + choices[j] + '">' + choices[j]
     print '</li>'

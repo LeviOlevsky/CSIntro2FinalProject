@@ -9,13 +9,15 @@ qs = cgi.FieldStorage()
 
 curr = csvToDict.userToDict('accounts.csv')
 
+print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=tempindex.html"/>')
+
 if 'reguser' in qs:
     reguser = qs['reguser'].value
     regpw = qs['regpw'].value
     re = qs['retype'].value
     if regpw == re and not reguser in curr:
         dest = open('accounts.csv', 'a', 0)
-        dest.write('\n' + reguser + ',' + regpw)
+        dest.write(reguser + ',' + regpw)
         dest.close()
         print html.heading(1, 'SUCCESS! Now login on the main page.') #REDIRECT TO LOGIN PAGE
     elif reguser in curr:
@@ -32,4 +34,6 @@ else:
             print html.heading(1, 'Incorrect password. Please try again.') #Redirect to homepage
     else:
         print html.heading(1, 'Incorrect username. Please try again.') #Redirect to homepage
+
+print html.heading(3, 'Redirecting in 2 seconds.')
 #i am a super messy programmer whoops'''

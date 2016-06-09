@@ -6,6 +6,13 @@ def header(title):
     </head>
     <body>''' 
 
+def headerWTags(title, tags):
+    return '''<!DOCTYPE html>
+    <html>
+    <head>
+    <title>''' + title + '</title>' + tags + '''</head>
+    <body>''' 
+
 def footer():
     return '''</body>
     </html>'''
