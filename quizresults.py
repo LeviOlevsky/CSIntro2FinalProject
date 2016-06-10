@@ -46,3 +46,5 @@ while i < len(incorrect):
     if i < len(incorrect) - 1:
         dest.write('\n')
     i += 1
+
+print makeAIDict(incorrect, terms, defins, 3) 
