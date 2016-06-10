@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import cgitb,cgi,html,csvToDict
+import cgitb,cgi,html,csvToDict,os
 cgitb.enable()
 
 print 'content-type: text/html\n'
@@ -19,7 +19,8 @@ if 'reguser' in qs:
         dest = open('accounts.csv', 'a', 0)
         dest.write(reguser + ',' + regpw)
         dest.close()
-        print html.heading(1, 'SUCCESS! Now login on the main page.') #REDIRECT TO LOGIN PAGE
+        print html.heading(1, 'SUCCESS! Now login on the main page.')
+        os.makedirs(reguser)#REDIRECT TO LOGIN PAGE
     elif reguser in curr:
         print html.heading(1, 'This username already exists.') #REDIRECTIONNNNNNN\
     elif regpw != re:

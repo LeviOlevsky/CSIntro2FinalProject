@@ -18,13 +18,6 @@ def randomize(which, terms, defins):
         random.shuffle(defins)
         return defins
 
-def updateCorrect(_in, quesTerm, associated, correct):
-    if associated[quesTerm.index(_in)] == _in:
-        print 'nextquestion'
-    else:
-        correct[quesTerm.index(_in)] += 1
-    return correct
-
 def fourChoices(defins):
     out = []
     out.append(random.choice(defins))
@@ -40,14 +33,14 @@ randTerms = randomize('terms', terms, defins)
 
 print html.header('Quizzer')
 print html.heading(2, 'Quiz yourself!')
-print '<ol><form>'
+print '<ol><form action="quizresults.py">'
 for i in range(len(cards)):
     print '<li>' + randTerms[i]
     choices = fourChoices(defins)
     if cards[randTerms[i]] not in choices:
         choices[random.randint(0,3)] = cards[randTerms[i]]
     for j in range(4):
-        print '<input type="radio" name="quiz' + str(i) + '" value="' + choices[j] + '">' + choices[j]
+        print '<input type="radio" name="' + randTerms[i] + '" value="' + choices[j] + '">' + choices[j]
     print '</li>'
 print '<input type="submit"></form></ol>'
 print html.footer()

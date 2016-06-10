@@ -6,16 +6,16 @@
     <body>
         <h1>Welcome</h1>
         Login!
-        <form action="login.py" method="GET">
+        <form action="login.py" method="POST">
             Username<input type="text" name="user" style="padding-right:10px">
-            Password<input type="text" name="pw" style="padding-right:10px"> <!--- update to type password and method POST later -->
+            Password<input type="password" name="pw" style="padding-right:10px"> <!--- update to type password and method POST later -->
             <input type=submit>
         </form>
         Don't have an account? Register now!
-        <form action="login.py" method="GET">
+        <form action="login.py" method="POST">
             Username<input type="text" name="reguser"><br>
-            Password<input type="text" name="regpw"> <br>
-            Retype password<input type="text" name="retype"><br>
+            Password<input type="password" name="regpw"> <br>
+            Retype password<input type="password" name="retype"><br>
             <input type=submit>
         </form>
     </body>
