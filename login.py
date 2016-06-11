@@ -39,6 +39,7 @@ else:
             print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=tempindex.html"/>')
             print html.heading(1, 'Incorrect password. Please try again.') #Redirect to homepage
     else:
+        print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=tempindex.html"/>')
         print html.heading(1, 'Incorrect username. Please try again.') #Redirect to homepage
 
 print html.heading(3, 'Redirecting in 2 seconds.')
