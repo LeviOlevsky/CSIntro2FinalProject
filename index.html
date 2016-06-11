@@ -4,20 +4,20 @@
         <title>Fizzlet</title>
         <link rel="stylesheet" type="text/css" href="theme.css">
     </head>
-    <body>
+    <body id="center">
         <h1>Welcome</h1>
-        Login!
+        <p id="login">Login!<p>
         <form action="login.py" method="POST">
-            Username<input type="text" name="user" style="padding-right:10px" placeholder="Enter username...">
-            Password<input type="password" name="pw" style="padding-right:10px" placeholder="Enter password...">
-            <input type="submit" value="Login!">
-        </form><br>
-        Don't have an account? Register now!
+            Username<br><input type="text" name="user" style="padding-right:10px" placeholder="Enter username..."><br>
+            Password<br><input type="password" name="pw" style="padding-right:10px" placeholder="Enter password..."><br>
+            <input type="submit" value="Login!"><br>
+        </form><hr>
+        <p id="login">Don't have an account? Register now!<p>
         <form action="login.py" method="POST">
-            Username<input type="text" name="reguser" placeholder="Create a username!"><br>
-            Password<input type="password" name="regpw" placeholder="Create a password!"> <br>
-            Retype password<input type="password" name="retype" placeholder="Confirm your password..."><br>
+            Username<br><input type="text" name="reguser" placeholder="Create a username!"><br>
+            Password<br><input type="password" name="regpw" placeholder="Create a password!"> <br>
+            Retype password<br><input type="password" name="retype" placeholder="Confirm password..."><br>
             <input type="submit" value="Join!">
         </form>
     </body>
-<head>
+<html>

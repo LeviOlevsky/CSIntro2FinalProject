@@ -3,6 +3,7 @@ def header(title):
     <html>
     <head>
     <title>''' + title + '''</title>
+    <link rel="stylesheet" type="text/css" href="theme.css">
     </head>
     <body>''' 
 
@@ -11,6 +12,7 @@ def headerWTags(title, tags):
     <html>
     <head>
     <title>''' + title + '</title>' + tags + '''</head>
+    <link rel="stylesheet" type="text/css" href="theme.css">
     <body>''' 
 
 def footer():

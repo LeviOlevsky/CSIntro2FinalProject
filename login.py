@@ -17,7 +17,7 @@ if 'reguser' in qs:
     regpw = qs['regpw'].value
     re = qs['retype'].value
     # This creates a header that redirects back to the homepage
-    print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=tempindex.html"/>')
+    print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=index.html"/>')
     # This checks if the passwords match and if the username already exists
     # If so, add their information to the CSV and make a directory for their stuff
     if regpw == re and not reguser in curr:
@@ -45,10 +45,10 @@ else:
             print html.heading(1, 'success')
             #login success stuff
         else:
-            print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=tempindex.html"/>')
+            print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=index.html"/>')
             print html.heading(1, 'Incorrect password. Please try again.')
     else:
-        print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=tempindex.html"/>')
+        print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;index.html"/>')
         print html.heading(1, 'Incorrect username. Please try again.')
 
 print html.heading(3, 'Redirecting in 2 seconds.')
