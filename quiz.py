@@ -39,12 +39,12 @@ print html.header('Quizzer')
 print html.heading(2, 'Quiz yourself!')
 print '<ol><form action="quizresults.py">'
 for i in range(len(cards)):
-    print '<li>' + randTerms[i]
+    print '<li>' + randTerms[i] + '<br>'
     choices = fourChoices(defins)
     if cards[randTerms[i]] not in choices:
         choices[random.randint(0,3)] = cards[randTerms[i]]
     for j in range(4):
-        print '<input type="radio" name="' + randTerms[i] + '" value="' + choices[j] + '">' + choices[j]
+        print '<input type="radio" name="' + randTerms[i] + '" value="' + choices[j] + '">' + choices[j] + '<br>'
     print '</li>'
 print '<input type="submit"></form></ol>'
 print html.footer()
