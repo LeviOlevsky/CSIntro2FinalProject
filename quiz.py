@@ -5,11 +5,12 @@ import cgitb,csvToDict,random,html
 
 print 'content-type: text/html\n'
 
+# Make a dictionary from the terms from CSV and make appropriate lists for each
 cards = csvToDict.userToDict('tempterms.csv')
 terms = cards.keys()
 defins = cards.values()
-correct = range(len(cards))
 
+# Randomizes, depending on which to randomize, the terms or definitions
 def randomize(which, terms, defins):
     if which == 'terms':
         random.shuffle(terms)
@@ -18,6 +19,7 @@ def randomize(which, terms, defins):
         random.shuffle(defins)
         return defins
 
+# Makes four choices out of the specified terms/definitions list
 def fourChoices(defins):
     out = []
     out.append(random.choice(defins))
@@ -31,6 +33,8 @@ def fourChoices(defins):
 
 randTerms = randomize('terms', terms, defins)
 
+# Make HTML page, which creates an ordered list with a multiple choice listing
+# of all the terms/definitions and the associated one
 print html.header('Quizzer')
 print html.heading(2, 'Quiz yourself!')
 print '<ol><form action="quizresults.py">'
