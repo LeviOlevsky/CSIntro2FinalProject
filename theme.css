@@ -53,15 +53,3 @@ input[type=submit] {
     border: 1px solid #999;
     padding: 3px 8px;
 }
-
-a:link {
-    color: #505395;
-}
-
-a:visited {
-    color: #854078;
-}
-
-a:hover {
-    color: #2d2e53;
-}

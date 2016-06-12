@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>Flash Cards</title>
+<link rel="stylesheet" type="text/css" href="../theme.css">
+        <style>
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #6bc0fc ;
+            }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+}</style>
+</head>
+<body>
+<body id="center">
+        <ul>
+            <li><a href="homepage.py">Home</a></li>
+            <li><a href="flashCards.html">Flash Cards</a></li>
+            <li><a href="quiz.html">Quiz Yourself</a></li>
+        </ul>
+
+<h3>Please type your terms and dictionaries, separated by commas, a new line for every new term and a quiz will be created</h3>
+<form action="../quiz.py">
+        <br><textarea name="myFile" rows="10" cols="100">
+        </textarea><br>
+        <input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html>

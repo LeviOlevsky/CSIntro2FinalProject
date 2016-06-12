@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import cgitb,cgi,html,csvToDict,os,hashlib
+import cgitb,cgi,html,csvToDict,os,hashlib,shutil
 cgitb.enable()
 
 print 'content-type: text/html\n'
@@ -27,7 +27,9 @@ if 'reguser' in qs:
         dest.close()
         print html.heading(1, 'SUCCESS! Now login on the main page.')
         os.makedirs(reguser)
-        #MAKE NEW FILE
+        shutil.copy2('homepage.py', reguser + '/homepage.py')
+        shutil.copy2('quiz.html', reguser + '/quiz.html')
+        shutil.copy2('flashCards.html', reguser + '/flashCards.html')
     elif reguser in curr:
         print html.heading(1, 'This username already exists.')
     elif regpw != re:
@@ -41,7 +43,7 @@ else:
         # Checks if the encrypted password in CSV matches the encrypted one the user submitted
         # If so, successful login, if not, print redirection header
         if curr[user] == hashlib.sha256(pw).hexdigest():
-            print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=' + user + '/TEMPLINK"/>')
+            print html.headerWTags('Redirecting', '<meta http-equiv="refresh" content="2;url=' + user + '/homepage.py"/>')
             print html.heading(1, 'success')
             #login success stuff
         else:

@@ -3,7 +3,6 @@ def header(title):
     <html>
     <head>
     <title>''' + title + '''</title>
-    <link rel="stylesheet" type="text/css" href="theme.css">
     </head>
     <body>''' 
 
@@ -12,12 +11,21 @@ def headerWTags(title, tags):
     <html>
     <head>
     <title>''' + title + '</title>' + tags + '''</head>
-    <link rel="stylesheet" type="text/css" href="theme.css">
     <body>''' 
 
 def footer():
     return '''</body>
     </html>'''
+
+def oneTable(list):
+    inner = ''
+    for item in list:
+        inner += tableRow(tableData('<br>'+ '<center>' + item + '</center>' + '<br>' \
+        '''<form action="csvToHtmlCardsDynamic.py">
+         <input type="hidden" name="''' + item + '''" value="''' +  item + '''"> 
+         <center><input type="submit" value="flip"></center>
+        </form>''')) 
+    return inner
 
 def tableTop():
     return '''<table style="border-collapse:collapse;"border="1"><tbody>'''
